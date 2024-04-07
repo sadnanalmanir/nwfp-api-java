@@ -18,7 +18,13 @@ public class GetMeasurementByCatchmentName {
     private static final Logger log = Logger.getLogger(GetMeasurementByCatchmentName.class.getName());
 
     public static void main(String[] args) {
-        String body = "{\n" +
+        String body_with_single_id = "{\n" +
+                "    \"startDate\": \"2019-12-17\",\n" +
+                "    \"endDate\": \"2019-12-19\",\n" +
+                "    \"catchmentName\": \"Catchment 10\",\n" +
+                "    \"typeId\": 19\n" +
+                "}";
+        String body_with_multiple_ids = "{\n" +
                 "    \"startDate\": \"2019-12-17\",\n" +
                 "    \"endDate\": \"2019-12-19\",\n" +
                 "    \"catchmentName\": \"Catchment 10\",\n" +
@@ -41,7 +47,7 @@ public class GetMeasurementByCatchmentName {
             log.info("Request URL: " + obj);
 
             try(OutputStream os = conn.getOutputStream()) {
-                byte[] inputToSend = body.getBytes(StandardCharsets.UTF_8);
+                byte[] inputToSend = body_with_multiple_ids.getBytes(StandardCharsets.UTF_8);
                 os.write(inputToSend, 0, inputToSend.length);
             }
 
