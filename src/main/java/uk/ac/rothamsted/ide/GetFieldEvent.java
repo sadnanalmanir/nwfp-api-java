@@ -57,7 +57,6 @@ public class GetFieldEvent {
                 JsonObject element;
                 while (elementIterator.hasNext()) {
                     element = elementIterator.next().getAsJsonObject();
-                    //logger.info("element: " + element);
                     String id = getNullAsEmptyString(element.get("Id"));
                     String datasetVersionId = getNullAsEmptyString(element.get("DatasetVersionId"));
                     String catchName = getNullAsEmptyString(element.get("catch_name"));

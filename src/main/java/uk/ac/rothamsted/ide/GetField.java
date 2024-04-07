@@ -57,7 +57,6 @@ public class GetField {
                 JsonObject element;
                 while (elementIterator.hasNext()) {
                     element = elementIterator.next().getAsJsonObject();
-                    //logger.info("element: " + element);
                     String id = getNullAsEmptyString(element.get("Id"));
                     String displayId = getNullAsEmptyString(element.get("DisplayId"));
                     String name = getNullAsEmptyString(element.get("Name"));

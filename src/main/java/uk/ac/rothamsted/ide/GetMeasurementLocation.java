@@ -13,12 +13,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.logging.Logger;
 
-public class GetCatchment {
-    private static final Logger log = Logger.getLogger(GetCatchment.class.getName());
+public class GetMeasurementLocation {
+    private static final Logger log = Logger.getLogger(GetMeasurementLocation.class.getName());
 
     public static void main(String[] args) {
         try {
-            String endpoint = "https://nwfp.rothamsted.ac.uk:8443/getCatchments";
+            String endpoint = "https://nwfp.rothamsted.ac.uk:8443/getMeasurementLocations";
             URL obj = new URL(endpoint);
             long startTime = System.currentTimeMillis();
             HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
@@ -58,19 +58,21 @@ public class GetCatchment {
                 while (elementIterator.hasNext()) {
                     element = elementIterator.next().getAsJsonObject();
                     String id = getNullAsEmptyString(element.get("Id"));
-                    String name = getNullAsEmptyString(element.get("Name"));
-                    String displayName = getNullAsEmptyString(element.get("DisplayName"));
+                    String measurementLocationName = getNullAsEmptyString(element.get("measurementLocationName"));
+                    String catchmentName = getNullAsEmptyString(element.get("catchmentName"));
+                    String catchmentDisplayName = getNullAsEmptyString(element.get("catchmentDisplayName"));
+                    String locationTypeName = getNullAsEmptyString(element.get("locationTypeName"));
+                    String locationX = getNullAsEmptyString(element.get("LocationX"));
+                    String locationY = getNullAsEmptyString(element.get("LocationY"));
+                    String farmletName = getNullAsEmptyString(element.get("farmletName"));
+                    String fieldName = getNullAsEmptyString(element.get("fieldName"));
+                    String catchmentId = getNullAsEmptyString(element.get("Catchment_Id"));
+                    String farmletId = getNullAsEmptyString(element.get("Farmlet_Id"));
+                    String fieldId = getNullAsEmptyString(element.get("Field_Id"));
+                    String locationType_id = getNullAsEmptyString(element.get("LocationType_Id"));
+                    String height = getNullAsEmptyString(element.get("Height"));
                     String validFrom = getNullAsEmptyString(element.get("ValidFrom"));
                     String validUntil = getNullAsEmptyString(element.get("ValidUntil"));
-                    String hydrologicalCatchmentArea = getNullAsEmptyString(element.get("HydrologicalCatchmentArea"));
-                    String fencedCatchmentArea = getNullAsEmptyString(element.get("FencedCatchmentArea"));
-                    log.info("Id: " + id
-                            + " Name: " + name
-                            + " DisplayName: " + displayName
-                            + " ValidFrom: " + validFrom
-                            + " ValidUntil: " + validUntil
-                            + " HydrologicalCatchmentArea: " + hydrologicalCatchmentArea
-                            + " FencedCatchmentArea: " + fencedCatchmentArea);
                 }
             }
         } catch (Exception e) {

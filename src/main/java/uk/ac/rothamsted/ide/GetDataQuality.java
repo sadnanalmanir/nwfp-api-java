@@ -57,7 +57,6 @@ public class GetDataQuality {
                 JsonObject element;
                 while (elementIterator.hasNext()) {
                     element = elementIterator.next().getAsJsonObject();
-                    //logger.info("element: " + element);
                     String id = getNullAsEmptyString(element.get("Id"));
                     String description = getNullAsEmptyString(element.get("Description"));
                     String severityOrder = getNullAsEmptyString(element.get("Severity_Order"));

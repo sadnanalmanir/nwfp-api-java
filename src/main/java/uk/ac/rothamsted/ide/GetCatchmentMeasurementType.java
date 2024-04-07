@@ -57,7 +57,6 @@ public class GetCatchmentMeasurementType {
                 JsonObject element;
                 while (elementIterator.hasNext()) {
                     element = elementIterator.next().getAsJsonObject();
-                    //logger.info("element: " + element);
                     String catchmentId = getNullAsEmptyString(element.get("catchment_ID"));
                     String catchmentName = getNullAsEmptyString(element.get("catchment_name"));
                     String measTypeDisplayName = getNullAsEmptyString(element.get("MeasTypeDisplayName"));
