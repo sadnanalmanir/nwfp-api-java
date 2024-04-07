@@ -1,0 +1,14 @@
+# curl --location 'https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByTypeId'
+#--data '{
+#    "numPerPage": 50,
+#    "page": 4,
+#    "typeId":25
+#}'
+POST https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByTypeId
+Content-Type: application/json
+
+{
+  "numPerPage": 50,
+  "page": 4,
+  "typeId": 25
+}

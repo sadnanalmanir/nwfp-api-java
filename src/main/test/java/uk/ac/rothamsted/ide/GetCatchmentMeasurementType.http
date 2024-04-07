@@ -1,0 +1,2 @@
+# curl --location 'https://nwfp.rothamsted.ac.uk:8443/getMeasurementTypes'
+GET https://nwfp.rothamsted.ac.uk:8443/getMeasurementTypes

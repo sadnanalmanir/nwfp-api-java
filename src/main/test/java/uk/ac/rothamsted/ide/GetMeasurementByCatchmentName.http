@@ -1,0 +1,35 @@
+# curl --location 'https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByCatchmentName'
+#--data '{
+#    "startDate": "2019-12-17",
+#    "endDate": "2019-12-19",
+#    "catchmentName": "Catchment 10",
+#    "typeId": 19
+#}'
+POST https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByCatchmentName
+Content-Type: application/json
+
+{
+  "startDate": "2019-12-17",
+  "endDate": "2019-12-19",
+  "catchmentName": "Catchment 10",
+  "typeId": 19
+}
+
+###
+
+# curl --location 'https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByCatchmentName'
+#--data '{
+#    "startDate": "2019-12-17",
+#    "endDate": "2019-12-19",
+#    "catchmentName": "Catchment 10",
+#    "typeId": [19,21]
+#}'
+POST https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByCatchmentName
+Content-Type: application/json
+
+{
+  "startDate": "2019-12-17",
+  "endDate": "2019-12-19",
+  "catchmentName": "Catchment 10",
+  "typeId": [19,21]
+}

@@ -1,0 +1,30 @@
+# curl --location 'https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByDateRange'
+#--data '{
+#    "startDate": "2016-12-17",
+#    "endDate": "2016-12-19",
+#    "typeId": 19
+#}'
+POST https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByDateRange
+Content-Type: application/json
+
+{
+  "startDate": "2016-12-17",
+  "endDate": "2016-12-19",
+  "typeId": 19
+}
+
+###
+# curl --location 'https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByDateRange'
+#--data '{
+#    "startDate": "2016-12-17",
+#    "endDate": "2016-12-19",
+#    "typeId": [24,19]
+#}'
+POST https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByDateRange
+Content-Type: application/json
+
+{
+  "startDate": "2016-12-17",
+  "endDate": "2016-12-19",
+  "typeId": [24,19]
+}
