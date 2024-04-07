@@ -24,10 +24,10 @@ public class GetAnimalBasicData {
             HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
             conn.setRequestMethod("GET");
             // set connection timeout to 2 seconds
-            //conn.setConnectTimeout(5000);
+            // conn.setConnectTimeout(5000);
             // set content reading timeout to 5 seconds
-            //conn.setReadTimeout(20000);
-            //conn.addRequestProperty("Accept-Language", "en-US,en;q=0.8");
+            // conn.setReadTimeout(20000);
+            // conn.addRequestProperty("Accept-Language", "en-US,en;q=0.8");
             conn.addRequestProperty("User-Agent", "Mozilla");
             log.info("Request URL: " + obj);
 
@@ -50,9 +50,9 @@ public class GetAnimalBasicData {
                 long endTime = System.currentTimeMillis();
                 log.info("Round trip response time = " + (endTime - startTime) + " ms");
 
-                log.info("API Response Data: " + response.toString());
+                log.info("API Response Data: " + response);
 
-                JsonArray jsonArray = new Gson().fromJson(String.valueOf(response), JsonArray.class);
+                JsonArray jsonArray = new Gson().fromJson(response.toString(), JsonArray.class);
                 Iterator<JsonElement> elementIterator = jsonArray.iterator();
                 JsonObject element;
                 while (elementIterator.hasNext()) {
