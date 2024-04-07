@@ -15,16 +15,16 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.logging.Logger;
 public class GetMeasurementByTypeId {
-    private static final Logger log = Logger.getLogger(GetMeasurementByDateRange.class.getName());
+    private static final Logger log = Logger.getLogger(GetMeasurementByTypeId.class.getName());
 
     public static void main(String[] args) {
         String body = "{\n" +
-                "    \"numPerPage\": 50,\n" +
+                "    \"numPerPage\": 5,\n" +
                 "    \"page\": 4,\n" +
                 "    \"typeId\": 25\n" +
                 "}";
         try {
-            String endpoint = "https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByDateRange";
+            String endpoint = "https://nwfp.rothamsted.ac.uk:8443/getMeasurementsByTypeId";
             URL obj = new URL(endpoint);
             long startTime = System.currentTimeMillis();
             HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
@@ -70,8 +70,8 @@ public class GetMeasurementByTypeId {
                 JsonObject element;
                 while (elementIterator.hasNext()) {
                     element = elementIterator.next().getAsJsonObject();
-                    Set<String> keyset = element.keySet();
 
+                    Set<String> keyset = element.keySet();
                     for (String key : keyset) {
                         if (key.equals("totalPages")) {
                             int totalPages = element.get("totalPages").getAsInt();
@@ -93,6 +93,8 @@ public class GetMeasurementByTypeId {
                                 String catchmentDisplayNameVal = getNullAsEmptyString(queryResult.get("CatchDisplayName"));
                                 String dataQualityVal = getNullAsEmptyString(queryResult.get("dataQuality"));
                             }
+                        } else {
+                            log.info("queryResults is empty");
                         }
                     }
                 }
