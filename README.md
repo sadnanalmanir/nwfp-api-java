@@ -4,19 +4,19 @@ Accessing North Wyke Farm Platform (NWFP) RESTful endpoints from Java
 ## NWFP has currently 12 RESTful endpoints supporting GET, POST operations
 
 ### Endpoints supporting GET operations
-    - getCatchment
-    - getCatchmentMeasurementType
-    - getField
-    - getFieldEvent
-    - getAnimalBasicData
-    - getDataQuality
-    - getMeasurementLocation
-    - getMeasurementType
-    - getMeasurementTypeLong
+    - https://nwfp.rothamsted.ac.uk:8443/getCatchments
+    - https://nwfp.rothamsted.ac.uk:8443/getMeasurementTypes
+    - https://nwfp.rothamsted.ac.uk:8443/getFields
+    - https://nwfp.rothamsted.ac.uk:8443/getFieldEvents
+    - https://nwfp.rothamsted.ac.uk:8443/getAnimalBasicData
+    - https://nwfp.rothamsted.ac.uk:8443/getDataQuality
+    - https://nwfp.rothamsted.ac.uk:8443/getMeasurementLocations
+    - https://nwfp.rothamsted.ac.uk:8443/getMeasurementTypes
+    - https://nwfp.rothamsted.ac.uk:8443/getMeasurementTypesLong
 ### Endpoints supporting POST operations
-    - getMeasurementByCatchmentName
-    - getMeasurementByDateRange
-    - getMeasurementByTypeId 
+    - https://nwfp.rothamsted.ac.uk:8443/getMeasurementSByCatchmentName
+    - https://nwfp.rothamsted.ac.uk:8443/getMeasurementSByDateRange
+    - https://nwfp.rothamsted.ac.uk:8443/getMeasurementSByTypeId 
 
 
 ## How to run
