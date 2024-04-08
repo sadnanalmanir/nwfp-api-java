@@ -1,5 +1,5 @@
 # nwfp-api-java
-Accessing North Wyke Farm Platform (NWFP) RESTful endpoints from Java
+This repository enables access to [North Wyke Farm Platform (NWFP) Data](https://nwfp.rothamsted.ac.uk/) RESTful [endpoints](https://red-crescent-623716.postman.co/documentation/7453000-ae05790f-8bea-4c3c-8b9c-006ebab9e13e) from Java
 
 ## NWFP has currently 12 RESTful endpoints supporting GET, POST operations
 
